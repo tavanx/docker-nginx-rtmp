@@ -112,3 +112,29 @@ Ports
 -----
 
 The container exposes ports **8080** (HTTP) and **1935** (RTMP)
+
+
+docker-compose.yml for rancher
+-----
+
+```
+version: '2'
+volumes:
+  demo-stream-configure:
+    external: true
+    driver: rancher-nfs
+  demo-stream-rtmp:
+    external: true
+    driver: rancher-nfs
+services:
+  stream:
+    image: docker-nginx-rtmp
+    stdin_open: true
+    volumes:
+    - demo-stream-rtmp:/opt/rtmp
+    - demo-stream-configure:/opt/nginx/conf.d
+    tty: true
+    ports:
+    - 1935:1935/tcp
+ 
+ ```
