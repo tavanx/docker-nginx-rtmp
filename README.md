@@ -9,20 +9,20 @@ Usage
 From Docker registry:
 
 ```
-docker pull rjrivero/nginx-rtmp
+docker pull tavan/rtmp-server
 ```
 
 Or build yourself:
 
 ```
-git clone https://github.com/rjrivero/docker-nginx-rtmp.git
-docker build --rm -t rjrivero/nginx-rtmp docker-nginx-rtmp
+git clone https://github.com/tavanx/docker-nginx-rtmp.git
+docker build --rm -t tavan/rtmp-server docker-nginx-rtmp
 ```
 
 Running the image:
 
 ```
-docker run --rm -p 8080:8080 -p 1935:1935 --name nginx-rtmp rjrivero/nginx-rtmp
+docker run --rm -p 8080:8080 -p 1935:1935 --name nginx-rtmp tavanx/rtmp-server
 ```
 
 RTMP server configuration
